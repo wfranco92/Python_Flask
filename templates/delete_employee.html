@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8643eda158.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/del_employee.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles2.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+
+    <script>
+
+        !function verify(){
+            const valores = window.location.search;
+            const del = '{{msn}}'
+            if (valores){
+                alert("Registro eliminado.")
+            }
+            else if (del=="fail"){
+                alert("No se encontro el empleado en la BBDD")
+            }
+        }()
+
+    </script>
+    
+    <title>José Arechabala S.A.</title>
+</head>
+<body>
+    <header class="header_dashboard">
+        <div class="header-nav">
+            <div class="container-nav" id="button_nav">
+                <nav>
+                    <div class="icon-nav">
+                        <i class="fas fa-align-justify"></i>
+                    </div>
+                    <ul class="nav-list" id='nav_list'>
+                        <li>
+                            <a href="{{g.home_page}}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('about')}}">Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('logout')}}">Ingreso</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="container-options">
+                 <span>
+                    <a href="{{g.home_page}}"><i class="fa fa-home" aria-hidden="true"><span class="i-span">Welcome, Super administrator</span></i></a>
+                 </span>
+                 <span>
+                    <a href="{{url_for('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                 </span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="{{url_for('static', filename='media/logo.JPG')}}" alt="Logo">
+        </div>
+    </header>
+    <main>
+            <section>
+                <div id="findform">
+                    <form action="{{url_for('findelete')}}" method="post" >
+                        <table>
+                            <tr>
+                                <td>Find By Id</td><td><input type="number" name="findbyname" autocomplete="off" required id="findbyname"></td><td><input type="submit" value="Buscar"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            
+                    <div id="img_profile" style="width: 24%; float: left; position: relative; left: 15vw; top: 10vh;">
+                        <img src="{{url_for('static', filename='media/foto perfil.jpg')}}" alt="Foto de perfil">
+                        
+                    </div>
+            
+                        <div class="conjunto_2">
+                            <table>
+                            <div>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Name : {{nombre}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                              
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;" id="idp"><b>ID :{{id}}</p></b></p></td>
+                                    
+                                </div>
+                                 </tr>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>dirección : {{direccion}}</b></p></td>
+                                    
+                                </div>
+                                 </tr>
+                                 <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Telefono : {{telefono}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                            </div>
+                            </table>
+                            <table>
+            
+                            <div>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Fecha inicio contrato: {{inicio}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Serie Contrato : {{contrato}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Fecha fin contrato : {{fin}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Dependencia : {{dependencia}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                                <tr>
+                                <div style="display: inline; text-align: center;">
+                                    <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Salario : {{salario}}</b></p></td>
+                                    
+                                </div>
+                                </tr>
+                            </div>
+            
+                        </div>
+                        </table>
+            </section>
+    </main>
+    <div class="container-buttons">
+        <div class="back"><a  href="{{g.home_page}}">Back</a></div>
+        
+        <div class="back" id="borrarData"><a  href="{{url_for('delete', id=id)}}">Borrar Registro</a></div>
+    </div>
+    <hr>
+    <footer style="border: 2px solid black;">
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p> &nbsp;&nbsp; &nbsp; Copyright © 2021 grupo #9</p>
+    </footer>
+    <script src="{{url_for('static', filename='js/del_employee.js')}}"></script>
+    <script>
+
+        const btnborrar = document.getElementById('borrarData');
+        btnborrar.style.display='none'
+       
+        function check(){
+            const checked = '{{id}}';
+            
+            if (checked){
+                btnborrar.style.display='inline';
+            }else{
+                btnborrar.style.display='none';
+            }
+        }
+
+        check()
+    </script>
+
+</body>
+</html>

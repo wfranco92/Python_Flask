@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <title>Administrador</title>
+</head>
+<body>
+    <header>
+        <img id="logoabout"  src="{{url_for('static', filename='media/logo.jpg')}}" alt="Logo Empresarial">
+        <nav>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('about')}}">Nosotros</a></li>
+                <p style="display: inline;"><strong>Usuario:</strong> {{session['user']}}</p>
+                <li><a style="left: 250px;"href="{{url_for('logout')}}">Cerrar sesion</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <section>
+
+
+        <h2 style="border: 4px solid rgb(6, 6, 151); border-radius: 10px; background-color: rgb(6, 6, 151); color: aliceblue; padding: 2px;">Panel de control</h2>
+
+
+        <div id="control_panel">
+            
+            <a href="{{url_for('adminAdd')}}"><figure><img class="img_adm" src="{{url_for('static', filename='media/1.JPG')}}" alt=""><figcaption>Agregar</figcaption></figure></a>
+            <a href="{{url_for('adminEdit')}}"><figure><img class="img_adm" src="{{url_for('static', filename='media/3.JPG')}}" alt=""><figcaption>Editar</figcaption></figure></a>
+            <a href="{{url_for('adminDelete')}}"><figure><img class="img_adm" src="{{url_for('static', filename='media/2.JPG')}}" alt=""><figcaption>Borrar</figcaption></figure></a>
+            <a href="{{url_for('adminFind')}}"><figure><img class="img_adm" src="{{url_for('static', filename='media/4.JPG')}}" alt=""><figcaption>Buscar</figcaption></figure></a>
+
+        </div>
+    </section>
+    <footer>
+
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p>Informacion adicional</p>
+    </footer>
+    
+</body>
+</html>

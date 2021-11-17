@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notraslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Arechabala S.A.</title>
+
+    <script>
+        !function verify(){
+
+            const message ="{{mensaje}}"
+
+            if (message){
+
+                alert(message)
+            }
+        }()
+        history.replaceState(null, null, 'Ingresar')
+        history.forward()
+    </script>
+    
+</head>
+<body><link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+    
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static', filename='media/logo.JPG')}}" alt="Logo">
+        </div>
+        <div class="menuprincipal">
+            <nav>
+                
+                <a href="{{url_for('about')}}" class="op_menu">Nosotros</a>
+                {% if session['user'] %}
+                    {% if session['rol']=="Empleado" %}
+                    <a href="{{url_for('loginEmploye')}}" class="op_menu">Perfil y Feedback</a>
+                    <p style="display: inline;"><strong>Usuario </strong> {{session['user']}}</p>
+                    <a href="{{url_for('logout')}}" class="op_menu">Cerrar sesion</a>
+                    {% else %}
+
+                        <a href="{{url_for('loginAdmin')}}" class="op_menu">Admin Board</a>
+                        <p style="display: inline;"><strong>Usuario </strong> {{session['user']}}</p>
+                        <a href="{{url_for('logout')}}" class="op_menu">Cerrar sesion</a>
+
+                    {% endif %}
+                {% endif %}
+                
+            </nav>
+        </div>
+    </header> 
+    <main class="conjunto_1">
+        <div style="width: 50%; position:relative; left: 5vw; padding-top: 5vh;">
+            <p style="border: 1px solid black; text-align: justify; padding: 5rem 2rem; max-height: 15vh;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi repudiandae, nostrum ipsam magni nemo, corporis totam tempore sit laudantium optio eum, ipsa assumenda eius expedita earum! Vel nesciunt dicta atque.  
+            <br>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur veniam optio sunt corrupti non facere tenetur alias ea aliquam cupiditate ratione aut, iste accusantium. Aut repudiandae debitis explicabo officia rem.
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nemo illum labore velit neque, dolorem ullam minima voluptatibus architecto est magnam repudiandae autem dolor adipisci magni. Mollitia repudiandae vitae amet.
+            </p>
+        </div>
+        <div id="formulario">
+            
+        <form action="{{url_for('login')}}" method="post">
+            <div style="align-items: center;">
+                <p style="text-align: center;"><strong>Login</strong></p>
+                
+                <div style="display: inline; text-align: center;">
+                    <p style="display: inline-block; margin: 1rem 5rem 0 4em;"><b>User</b></p>
+                    <input type="text" name="user", required id="user">
+                </div>
+                <br>
+                <div style="display: inline; text-align: center;">
+                    <p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Password</b></p>
+                    <input type="password" name="password" required id="pass">
+                </div>
+                <div>
+                    <a href="#" style="display: inline-block; margin: 1rem 10rem 0 2em;">Forgot your password?</a>
+                    <input type="submit" value="Enter" style="padding: 4px;">
+                </div>
+            </div>
+        </form>
+        </div>
+    </main>
+    <hr>
+    <footer style="border: 2px solid black;">
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p>Informacion adicional</p>
+    </footer>
+    <script>
+
+        function verifylog(){
+            const sesion = "{{session['user']}}";
+            if (sesion){
+                const form = document.getElementById("formulario");
+                form.style.display="none";
+            }
+        
+        }
+        verifylog();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8643eda158.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+    <title>José Arechabala S.A.</title>
+</head>
+<body>
+    <header class="header_dashboard">
+        <div class="header-nav">
+            <div class="container-nav" id="button_nav">
+                <nav>
+                    <button class="icon-nav">
+                            <i class="fas fa-align-justify"></i>
+                    </button>
+                    <ul class="nav-list" id='nav_list'>
+                        <li>
+                            <a href="{{g.home_page}}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('about')}}">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="container-options">
+                 <span>
+                    <a href="{{g.home_page}}"><i class="fa fa-home" aria-hidden="true"></i></a>
+                    <span class="i-span">Welcome, Super administrator</span></i>
+                 </span>
+                 <span>
+                    <a href="{{url_for('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                 </span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="{{url_for('static', filename='media/logo.JPG')}}" alt="Logo">
+        </div>
+    </header>
+    <main>
+        <div class="section-info">
+            <div>
+                <div>
+                    <p>Número de empleados</p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>Promedio salarial</p>
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>Type profession</p>
+                    <i class="far fa-address-card"></i>
+                </div>
+                <div>
+                    <p>Outstanding employee</p>
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>Configuración de dashboard</p>
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>Alertas</p>
+                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="main-div_options">
+            <div class="div-subinfo">
+                <div>
+                    <p>average salary</p>
+                </div>
+                <div>
+                    <p>average assigned score</p> 
+                </div>
+                <div>
+                    <p>Others</p>
+                </div>
+            </div>
+            <div class="div-icons_options">
+                <div>
+                    <a href="{{url_for('adminAdd')}}">
+                        <i class="option firt fa fa-user-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url_for('adminEdit')}}">
+                        <i class="option fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    
+                </div>
+                <div>
+                    <a href="{{url_for('adminDelete')}}">
+                        <i class="fa option fa-trash" aria-hidden="true"></i>
+                    </a>
+                    
+                </div>
+                <div>
+                    <a href="{{url_for('adminFind')}}">
+                        <i class="fa option fa-search" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <footer style="border: 2px solid black;">
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p> &nbsp;&nbsp; &nbsp; Copyright © 2021 grupo #9</p>
+    </footer>
+    <script src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+</body>
+</html>

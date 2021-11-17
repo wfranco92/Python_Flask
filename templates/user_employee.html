@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleado</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles2.css')}}">
+
+    <script>
+
+        function verify(){
+
+            const message = "{{msn}}";
+
+            if(message){
+                alert("No existe aun retroalimentacion para el mes seleccionado");
+            }
+        }
+        verify();
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static', filename='media/logo.JPG')}}" alt="Logo">
+        </div>
+        <div class="menuprincipal">
+            <nav>
+                <a href="{{url_for('index')}}" class="op_menu">Home</a>
+                <a href="{{url_for('about')}}" class="op_menu">Nosotros</a>
+
+                <p style="display: inline;"><strong>Usuario:</strong> {{session['user']}}</p>
+
+                <a href="{{url_for('logout')}}" class="op_menu">Cerrar sesion</a>
+            </nav>
+        </div>
+    </header>
+    <main id="contenedor_editar_employee">
+
+
+
+        <form action="{{url_for('feed')}}" method="post">
+        <div id="img_profile" style="width: 24%; float: left; position: relative; left: 15vw; top: 10vh;">
+            <img src="{{url_for('static', filename='media/foto perfil.jpg')}}" alt="Foto de perfil">
+            
+        </div>
+
+            <div class="conjunto_2">
+            <table>
+                    <div>
+                    <tr>
+                    <div style="display: inline; text-align: center;">
+                        <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Nombre</b></p></td>
+                        <td><input type="text" name="name" value="{{nombre}}" readonly></td>
+                    </div>
+                    </tr>
+                  
+                    <tr>
+                    <div style="display: inline; text-align: center;">
+                        <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>ID</b></p></td>
+                        <td><input type="text" name="id" value="{{id}}" readonly></td>
+                    </div>
+                     </tr>
+                    <tr>
+                    <div style="display: inline; text-align: center;">
+                        <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Direccion</b></p></td>
+                        <td><input type="address" name="direccion" value="{{direccion}}" readonly></td>
+                    </div>
+                     </tr>
+                     <tr>
+                    <div style="display: inline; text-align: center;">
+                        <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Telefono</b></p></td>
+                        <td><input type="text" name="phone" value="{{telefono}}" readonly> </td>
+                    </div>
+                    </tr>
+                </div>
+                </table>
+                <table>
+
+                        <div>
+                            <tr>
+                            <div style="display: inline; text-align: center;">
+                                <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Fecha inicio contrato</b></p></td>
+                                <td><input type="text" name="admision" value="{{inicio}}" readonly></td>
+                            </div>
+                            </tr>
+                            <tr>
+                            <div style="display: inline; text-align: center;">
+                                <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Serie Contrato</b></p></td>
+                                <td><input type="text" name="contract" value="{{contrato}}" readonly></td>
+                            </div>
+                            </tr>
+                            <tr>
+                            <div style="display: inline; text-align: center;">
+                                <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Fecha fin de contrato</b></p></td>
+                                <td><input type="address" name="contract_end" value="{{fin}}" readonly></td>
+                            </div>
+                            </tr>
+                            <tr>
+                            <div style="display: inline; text-align: center;">
+                                <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Dependencia</b></p></td>
+                                <td><input type="text" name="dependence" value="{{dependencia}}" readonly></td>
+                            </div>
+                            </tr>
+                            <tr>
+                            <div style="display: inline; text-align: center;">
+                                <td><p style="display: inline-block; margin: 1rem 3rem 0 4em;"><b>Salario</b></p></td>
+                                <td><input type="text" name="salary" value="{{salario}}" readonly></td>
+                            </div>
+                            </tr>
+                            
+                        </div>
+
+                        </div>
+                </table>
+
+            <div id="selector">
+                
+                        Seleccione mes para feedback 
+                            
+                            <select name="Mes" id="selectmes">
+                                <option value=""> Seleccione mes </option>
+                            {% for mes in meses%}
+                                <option value="{{mes}}">{{mes}}</option>
+                            {% endfor%}
+
+                        </select>
+
+                        <textarea name="txtarea" id="txtarea" cols="120" rows="10" >{{feed}}</textarea>
+                        
+            </div>
+
+            <div class="just2">
+                <input type="submit" value="Consultar">
+            </div>  
+           
+        </form>
+    </main>
+    
+    <div class="back"><a  href="{{url_for('index')}}">Back</a></div>
+
+    <hr>
+
+    
+
+    <footer style="border: 2px solid black;">
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p> &nbsp;&nbsp; &nbsp; Copyright © 2021 grupo #9</p>
+    </footer>
+</body>
+</html>

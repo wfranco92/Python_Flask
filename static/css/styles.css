@@ -1,0 +1,302 @@
+/**{
+    border: 1px solid black;
+}*/
+a {
+    text-decoration: none;
+}
+.form-addemployee {
+    position: relative;
+    height: 100%;
+}
+main{
+    height: 45vh;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0 5em;
+}
+
+img {
+    height: 70%;
+    width: 70%;
+}
+
+/* .jumbotron {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border: 4px solid black;
+        
+} */
+
+header {
+    margin: 5px;
+    display: flex;
+    background-color: rgb(202, 197, 197);
+    flex-direction: column;
+}
+#formulario{
+    position: relative;
+    left: 15vw;
+    width: 30%;
+    border-left: 2px solid #000000;
+    padding: 2em;
+}
+
+.logo {
+    text-align: center;
+    margin: 8px;
+    padding: 0;
+    width: 100%;
+    height: 95%;
+}
+
+.menuprincipal {
+    text-align: right;
+    
+    margin: 5px;
+    background-color:rgb(202, 197, 197);
+    height: 3rem;
+}
+
+.op_menu {
+    margin: 10px;
+}
+
+.pantppl {
+    margin: 5px;
+}
+
+/* .menu{
+    border: 1px solid black;
+    background-color: rgb(199, 194, 194);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+} */
+
+.conjunto_1 {
+    display: flex;
+    overflow: hidden;
+    
+}
+
+.conjunto_2 {
+    display: flex;
+    position: relative;
+    top: 10vh;
+    left: 10%;
+    width: 60%;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    background-color: #012B82;
+    color: white;
+}
+
+
+.container-back {
+    margin-top: 15vh;
+    width: 100%;
+    align-content: center;
+}
+.back{
+
+    margin-top: 50px;
+    text-decoration: none;
+    padding: 10px;
+    width: 100px;
+    height: 20px;
+    background-color: grey;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+.back a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#logoabout{
+
+    display:block;
+    margin:auto;
+}
+
+section{
+
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+}
+
+nav{
+    display:block;
+    margin:auto;
+}
+
+nav li{
+    display:inline;
+    margin:auto;
+}
+
+nav li a{
+
+    text-decoration: none;
+    padding: 1em;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+li:nth-child(2){
+
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+nav li a:hover{
+    
+    font-size: 32px;
+    
+    color: aliceblue;
+}
+#btncontactenos{
+    
+    width: 120px;
+    height: 30px;
+    
+}
+#control_panel{
+
+    border: 4px solid blue;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.img_adm{
+
+    width: 150px;
+    height: 150px;
+}
+figure {
+    
+    position: relative;
+    top: 140px;
+    padding: 4px;
+    margin: auto;
+    opacity: 0.5;
+  }
+
+figure:hover {
+ 
+    opacity: 1;
+  }
+
+figcaption {
+      
+    background-color: black;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    
+  }
+
+#control_panel a{
+      text-decoration: none;
+}
+
+#findform{
+      
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#areaedit{
+
+    display: flex;
+}
+
+#contenedor_editar_employee{
+
+    height: 80vh;
+}
+
+#selector{
+    position: absolute;
+    top: 250px;
+}
+
+#txtarea{
+
+    position: relative;
+    top: 50px;
+}
+
+.just{
+    position: absolute;
+    bottom: -10%;
+    right: 11.5%;
+    }
+
+.just2{
+    position: relative;
+    top: 550px;
+}
+
+.container-input {
+    text-align: center;
+    justify-content: center;
+    
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile-2 + label {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    color: #000000;
+    padding: 5px;
+    padding-top: 8px;
+    border: 1px solid currentColor;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+    color: #000ba8;
+}
+.input-submit {
+    margin: 0 auto;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+}
+main {
+    width: 100%;
+    display: flex;
+}
+
+
+
+
+

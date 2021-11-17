@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <title>Acerca de...</title>
+</head>
+<body>
+    <header>
+        <img id="logoabout"  src="{{url_for('static', filename='media/logo.JPG')}}" alt="Logo Empresarial">
+        <nav>
+            <ul>
+                <li><a href="{{g.home_page}}">Home</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="{{url_for('index')}}">Ingreso</a></li>
+                {% if session['user'] %}
+                    <p style="display: inline;"><strong>Usuario </strong> {{session['user']}}</p>
+                    <a href="{{url_for('logout')}}" class="op_menu">Cerrar sesion</a>
+                {% endif %}
+            </ul>
+                
+        </nav>
+    </header>
+
+    <section>
+
+        <article>
+
+        <h2>Mision</h2>
+        
+            <p>Lorem ipsum dolor sit amet. Qui consequatur nihil aut atque repudiandae qui nemo laborum est deleniti sapiente. 
+                Est pariatur iusto aut repudiandae ducimus id molestiae suscipit id harum voluptatem qui iusto galisum nam voluptatem quaerat. 
+                At officiis veniam non culpa molestiae ut maxime sunt. Ut aperiam mollitia et maiores doloribus ea eaque corrupti aut totam animi 
+                et dolores magnam vel delectus incidunt quo numquam sunt? Et voluptatem galisum et dolorem rerum et laboriosam voluptatem ut veniam 
+                illo 33 illum atque ut ipsam corrupti. Et  reprehenderit et laboriosam necessitatibus hic vero autem aut sapiente minus 33 natus 
+                dignissimos eum corporis soluta et asperiores velit. 33 reprehenderit obcaecati et quaerat officiis ex nulla incidunt qui molestiae 
+                porro sed praesentium. 
+            </p>
+            <p>Et voluptatem libero aut earum aliquam  illo sapiente vel atque voluptatem ea earum quia. In voluptate 
+                    quidem ut eveniet doloribus ea perferendis nobis eos nobis fuga qui porro velit. Et doloribus rerum ea culpa 
+                    ipsam nam nisi labore et accusamus ullam. Aut tempora vero ut vitae enim aut expedita dignissimos. Ut consequatur
+                     neque non facilis neque ex exercitationem repudiandae sit placeat maiores in tempore ipsum quo explicabo veniam eos temporibus enim. 
+            </p>
+            <p>Eum magni exercitationem et autem itaque sed veniam omnis. Aut praesentium libero sed velit dolorem 
+                vel amet voluptatum sed harum officia vel reiciendis  et totam consequatur. Est ullam praesentium 
+                ea eligendi incidunt et voluptas soluta qui porro officiis qui recusandae ipsa et illo voluptatem 
+                sit architecto ipsam. Ut quos iste sed consequatur tempora ex porro alias ut quibusdam ipsum ut 
+                earum ipsa rem amet unde. In voluptatibus omnis ut consequuntur saepe qui quia sint ad internos 
+                itaque in aliquid voluptatem et molestiae velit.
+            </p>
+
+        </article>
+        <article>
+
+            <h2>Vision </h2>
+
+            <p>Lorem ipsum dolor sit amet. Qui consequatur nihil aut atque repudiandae qui nemo laborum est deleniti sapiente. 
+                Est pariatur iusto aut repudiandae ducimus id molestiae suscipit id harum voluptatem qui iusto galisum nam voluptatem quaerat. 
+                At officiis veniam non culpa molestiae ut maxime sunt. Ut aperiam mollitia et maiores doloribus ea eaque corrupti aut totam animi 
+                et dolores magnam vel delectus incidunt quo numquam sunt? Et voluptatem galisum et dolorem rerum et laboriosam voluptatem ut veniam 
+                illo 33 illum atque ut ipsam corrupti. Et  reprehenderit et laboriosam necessitatibus hic vero autem aut sapiente minus 33 natus 
+                dignissimos eum corporis soluta et asperiores velit. 33 reprehenderit obcaecati et quaerat officiis ex nulla incidunt qui molestiae 
+                porro sed praesentium. 
+            </p>
+            <p>Et voluptatem libero aut earum aliquam  illo sapiente vel atque voluptatem ea earum quia. In voluptate 
+                    quidem ut eveniet doloribus ea perferendis nobis eos nobis fuga qui porro velit. Et doloribus rerum ea culpa 
+                    ipsam nam nisi labore et accusamus ullam. Aut tempora vero ut vitae enim aut expedita dignissimos. Ut consequatur
+                     neque non facilis neque ex exercitationem repudiandae sit placeat maiores in tempore ipsum quo explicabo veniam eos temporibus enim. 
+            </p>
+            <p>Eum magni exercitationem et autem itaque sed veniam omnis. Aut praesentium libero sed velit dolorem 
+                vel amet voluptatum sed harum officia vel reiciendis  et totam consequatur. Est ullam praesentium 
+                ea eligendi incidunt et voluptas soluta qui porro officiis qui recusandae ipsa et illo voluptatem 
+                sit architecto ipsam. Ut quos iste sed consequatur tempora ex porro alias ut quibusdam ipsum ut 
+                earum ipsa rem amet unde. In voluptatibus omnis ut consequuntur saepe qui quia sint ad internos 
+                itaque in aliquid voluptatem et molestiae velit.
+            </p>
+        </article>
+
+        <article>
+            <h2>Politicas</h2>
+            <p>Lorem ipsum dolor sit amet. Qui consequatur nihil aut atque repudiandae qui nemo laborum est deleniti sapiente. 
+                Est pariatur iusto aut repudiandae ducimus id molestiae suscipit id harum voluptatem qui iusto galisum nam voluptatem quaerat. 
+                At officiis veniam non culpa molestiae ut maxime sunt. Ut aperiam mollitia et maiores doloribus ea eaque corrupti aut totam animi 
+                et dolores magnam vel delectus incidunt quo numquam sunt? Et voluptatem galisum et dolorem rerum et laboriosam voluptatem ut veniam 
+                illo 33 illum atque ut ipsam corrupti. Et  reprehenderit et laboriosam necessitatibus hic vero autem aut sapiente minus 33 natus 
+                dignissimos eum corporis soluta et asperiores velit. 33 reprehenderit obcaecati et quaerat officiis ex nulla incidunt qui molestiae 
+                porro sed praesentium. 
+            </p>
+            <p>Et voluptatem libero aut earum aliquam  illo sapiente vel atque voluptatem ea earum quia. In voluptate 
+                    quidem ut eveniet doloribus ea perferendis nobis eos nobis fuga qui porro velit. Et doloribus rerum ea culpa 
+                    ipsam nam nisi labore et accusamus ullam. Aut tempora vero ut vitae enim aut expedita dignissimos. Ut consequatur
+                     neque non facilis neque ex exercitationem repudiandae sit placeat maiores in tempore ipsum quo explicabo veniam eos temporibus enim. 
+            </p>
+            <p>Eum magni exercitationem et autem itaque sed veniam omnis. Aut praesentium libero sed velit dolorem 
+                vel amet voluptatum sed harum officia vel reiciendis  et totam consequatur. Est ullam praesentium 
+                ea eligendi incidunt et voluptas soluta qui porro officiis qui recusandae ipsa et illo voluptatem 
+                sit architecto ipsam. Ut quos iste sed consequatur tempora ex porro alias ut quibusdam ipsum ut 
+                earum ipsa rem amet unde. In voluptatibus omnis ut consequuntur saepe qui quia sint ad internos 
+                itaque in aliquid voluptatem et molestiae velit.
+            </p>
+        </article>
+
+        <div>
+            <h2>Contactanos</h2>
+            <form action="">
+                <p>Nombre</p>
+                <input type="text" name="nombre" id="nombre">
+                <p>Email</p>
+                <input type="email">
+                <p>Mensaje</p>
+                <textarea name="mensaje" id="mensaje" cols="80" rows="20"></textarea>
+                <br>
+                <input type="submit" name="enviar" value="Enviar" id="btncontactenos">
+
+            </form>
+        </div>
+    </section>
+    <footer>
+
+        <h5>FOOTER</h5>
+        <h5>Pie de pagina</h5>
+        <p>logo</p>
+        <p>Informacion adicional</p>
+    </footer>
+    
+</body>
+</html>
